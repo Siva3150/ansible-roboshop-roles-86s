@@ -20,7 +20,7 @@
 
 - name: connnect to mongodb catalogue
   ansible.builtin.command: mongosh mongodb.sivadevops.space --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
-    register: catalogue_output
+  register: catalogue_output
 
   # - name: evaluate catalogue database
   #   community.mongodb.mongodb_shell:
