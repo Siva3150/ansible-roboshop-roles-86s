@@ -5,6 +5,11 @@ ansible_commands:
 
   - name: Create EC2 Instances and Configure Route53
     command: >
+     ansible-playbook -i inventory.ini -e "instances=['catalogue']" 01-ec2-r53.yaml
+
+
+  - name: Create EC2 Instances and Configure Route53
+    command: >
       ansible-playbook -i inventory.ini
       -e "instances=['mongodb','redis','mysql','rabbitmq','frontend','catalogue','cart','payment','shipping']"
       01-ec2-r53.yaml
