@@ -5,10 +5,17 @@
   tags: 
   - deployment
 
+# - name: nodejs 
+#   ansible.builtin.import_role: 
+#    name: common 
+#    tasks_from: nodejs.yaml 
+
 - name: nodejs 
-  ansible.builtin.import_role: 
+  ansible.builtin.include_role: 
    name: common 
    tasks_from: nodejs.yaml 
+  tags: 
+  - deployment
   
 - name: Copying mongo repo 
   ansible.builtin.copy: 
